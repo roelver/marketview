@@ -9,4 +9,4 @@ npm-debug.log
 data
 vendor
 start_server
-stop_server
+start_mongo
