@@ -1,26 +1,35 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Charts:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
-      </ul>
+<!-- Chart -->
+<div class="row">
+  <div class="col-md-4 stock-form">
+    <h4>Charts</h4>
+    <div class="row tabs">
+       <ul class="nav nav-tabs nav-stacked col-md-6 col-lg-6 col-sm-6 col-xs-6" ng-repeat="stock in stocks">
+         <li><a href="#" tooltip="{{stock.info}}">{{stock.name}}<button type="button" class="close" ng-click="deleteStock(stock)">&times;</button></a></li>
+       </ul>
+    </div>
+    <div class="entry">
+      <form>
+        <label><input type="checkbox" id="format" ng-click="toggleFormat()"> Show Relative Chart</label>
+        <p class="input-group">
+          <input type="text" class="form-control" placeholder="Enter stock code" ng-model="newStock" ng-maxlength="5" required>
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" ng-click="addStock()">Add to Chart</button>
+          </span>
+        </p>
+      </form>
+      <p class="link"><a href="http://eoddata.com/stocklist/NASDAQ.htm" target="_new">Search for stock codes</a></p>
     </div>
   </div>
-
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new chart here." ng-model="newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
+  <div class="col-md-8"> 
+    <div id="chart">
+    </div>
+  </div>
 </div>
 
+<!-- <script src="app/main/chart.js"></script>
+ -->
 <footer class="footer">
   <div class="container">
       <p>&copy; Roel Verbunt for <a href="http://www.freecodecamp.com/challenges/basejump-chart-the-stock-market">FreeCodeCamp.com</a> | <a href="https://github.com/roelver/marketview">Source</a></p>

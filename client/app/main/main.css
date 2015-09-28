@@ -1,8 +1,11 @@
-.thing-form {
-    margin: 20px 0;
+.row {
+    margin: 0;
 }
 #logo {
     margin-right: 10px;
+}
+.form-control {
+    text-transform: uppercase;
 }
 .navbar-brand {
     padding: 0;
@@ -11,12 +14,28 @@
     background-color: #fff;
 }
 .footer {
+    position: relative;
     text-align: center;
-    padding: 30px 0;
-    margin-top: 70px;
+    padding: 8px 0;
     border-top: 1px solid #E5E5E5;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .navbar-text {
     margin-left: 15px;
+}
+.nav-tabs {
+    border-bottom: none;
+}
+.nav-tabs li {
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+.row.tabs {
+    margin-bottom: 25px;
+}
+.link {
+    margin-top: 30px;
+    font-size: 1.2em;
 }
